@@ -19,9 +19,16 @@ def profile():
 def login():
    return render_template('login.html')
 
-@app.route("/brenden")
-def Brenden():
-	return render_template("brenden.html")
+characters = ["brenden", "chad"]
+
+@app.route("/<name>")
+def generic(name):
+    for character in characters:
+        if name == character:
+            site = f"{name}.html"
+            return render_template(site)
+    else:
+        return "That character does not exist"
 
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=2224)

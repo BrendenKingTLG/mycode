@@ -9,6 +9,11 @@ searchForm.addEventListener('submit', (e) =>{
     const frame = document.getElementById("frame");
     const newChar = document.createElement("iframe");
 
+    // currentIFrame = document.getElementById("iframe")
+    // if (currentIFrame!= ""){
+    //     frame.removeChild(currentIFrame)
+    // }
+    frame.innerHTML = "";
     newChar.setAttribute("src", character);
     frame.appendChild(newChar);
 
